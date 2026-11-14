@@ -193,6 +193,6 @@ Released under the **MIT License**. You may use, copy, modify and share this sof
 
 - The Kivy, Buildozer and python-for-android teams for the tools that make this possible.
 - Casio ClassWiz, GeoGebra and Qalculate! for inspiration on what a complete calculator should include.
-- Built with AI pair-programming help from Claude (Anthropic).
+- Built with AI pair-programming help from Abdalla himself created.
 
 **Created by Abdalla Said Ahmed.**
