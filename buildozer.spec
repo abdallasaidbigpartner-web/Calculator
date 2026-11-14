@@ -1,10 +1,10 @@
 [app]
-title = Calculator
+title = Ultimate Calculator
 package.name = calculator
 package.domain = org.myapp
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
-version = 0.1
+version = 1.0.0
 requirements = python3==3.11.5,hostpython3==3.11.5,kivy==2.3.0
 orientation = portrait
 fullscreen = 0

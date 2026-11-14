@@ -1,7 +1,12 @@
 name: Build APK
 on:
   push:
+    branches: [main]
+    tags: ["v*"]
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -38,3 +43,10 @@ jobs:
         with:
           name: calculator-apk
           path: bin/*.apk
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp bin/*.apk "UltimateCalculator-${{ github.ref_name }}.apk"
+          gh release create "${{ github.ref_name }}" "UltimateCalculator-${{ github.ref_name }}.apk" --title "Ultimate Calculator ${{ github.ref_name }}" --notes-file RELEASE_NOTES.md
