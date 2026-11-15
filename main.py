@@ -1050,6 +1050,7 @@ CREATOR = "Abdalla Said Ahmed"
 
 BG = (0.043, 0.047, 0.063, 1)
 GOLD = (1.0, 0.82, 0.40, 1)
+TEAL = (0.37, 0.92, 0.83, 1)
 GRAY = (0.55, 0.60, 0.70, 1)
 WHITE = (1, 1, 1, 1)
 C_BAR = (0.12, 0.13, 0.17, 1)
@@ -1321,11 +1322,14 @@ class CalculatorApp(App):
 
         root = BoxLayout(orientation="vertical", padding=dp(8), spacing=dp(5))
 
-        head = BoxLayout(size_hint_y=None, height=dp(46), spacing=dp(5))
-        names = BoxLayout(orientation="vertical")
-        names.add_widget(make_label(CREATOR.upper(), 16, GOLD, halign="left", bold=True))
-        names.add_widget(make_label("Creator of this calculator", 11, GRAY, halign="left"))
-        head.add_widget(names)
+        title = BoxLayout(orientation="vertical", size_hint_y=None, height=dp(36))
+        title.add_widget(make_label(CREATOR.upper(), 14, GOLD, halign="center", bold=True))
+        title.add_widget(make_label("Sameeyaha Calculator-kaan (Creator of this calculator)",
+                                    9, TEAL, halign="center"))
+        root.add_widget(title)
+
+        head = BoxLayout(size_hint_y=None, height=dp(40), spacing=dp(5))
+        head.add_widget(Label())
         for t, tok in (("APPS", "@APPS"), ("HIST", "@HIST"), ("DEG", "@DEG")):
             k = self.mk(t, C_BAR, fs=12, tok=tok)
             k.size_hint_x = None
